@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"cmath": "c",
-		"complex": "c",
-		"unistd.h": "c",
-		"ft_printf.h": "c",
-		"__node_handle": "c"
-	}
-}

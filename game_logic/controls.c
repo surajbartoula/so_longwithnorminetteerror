@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:17:59 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/18 10:36:51 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:37:31 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,13 +111,13 @@ int	key_hook(int keystroke, t_play *game)
 
 	if (keystroke == 53)
 		exit_window(game);
-	if (keystroke == 13)
+	if (keystroke == 13 || keystroke == 126)
 		press = keyboard_w_s(game, keystroke);
-	if (keystroke == 1)
+	if (keystroke == 1 || keystroke == 125)
 		press = keyboard_w_s(game, keystroke);
-	if (keystroke == 0)
+	if (keystroke == 0 || keystroke == 123)
 		press = keyboard_a_d(game, keystroke);
-	if (keystroke == 2)
+	if (keystroke == 2 || keystroke == 124)
 		press = keyboard_a_d(game, keystroke);
 	if (press)
 		adding_in_graphics(game);
