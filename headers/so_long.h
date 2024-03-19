@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:25:22 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/17 22:59:06 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:14:11 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ typedef struct t_type
 }	t_play;
 
 int			exit_window(t_play *game);
+int			character_steps(t_play *game, int i, int j);
 int			key_hook(int keystroke, t_play *game);
-int			map_reading(t_play *game, char *argv[]);
+int			read_map_ber(t_play *game, char *argv[]);
 void		check_errors(t_play *game);
 void		character_valid(t_play *game);
-void		adding_in_graphics(t_play *game);
+void		add_characters(t_play *game);
 void		place_images_in_game(t_play *game);
 
 #endif

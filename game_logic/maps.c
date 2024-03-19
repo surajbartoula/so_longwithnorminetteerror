@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:43:41 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/17 23:03:54 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:11:04 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	add_line(t_play *game, char *line)
 	return (1);
 }
 
-int	map_reading(t_play *game, char *argv[])
+int	read_map_ber(t_play *game, char *argv[])
 {
 	char	*readmap;
 

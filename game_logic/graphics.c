@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 18:13:30 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/18 16:51:55 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:38:35 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ static void	place_collectable(t_play *game, int height, int width)
 
 void	place_images_in_game(t_play *game)
 {
-	int	i;
-	int	j;
+	int	x_pos;
+	int	y_pos;
 
 	game->floor = mlx_xpm_file_to_image(game->mlx,
-			"game_images/water.xpm", &i, &j);
+			"game_images/water.xpm", &x_pos, &y_pos);
 	game->barrier = mlx_xpm_file_to_image(game->mlx,
-			"game_images/tiles.xpm", &i, &j);
+			"game_images/tiles.xpm", &x_pos, &y_pos);
 	game->player = mlx_xpm_file_to_image(game->mlx,
-			"game_images/dolphin.xpm", &i, &j);
+			"game_images/dolphin.xpm", &x_pos, &y_pos);
 	game->exit = mlx_xpm_file_to_image(game->mlx,
-			"game_images/exit.xpm", &i, &j);
+			"game_images/exit.xpm", &x_pos, &y_pos);
 	game->collectable = mlx_xpm_file_to_image(game->mlx,
-			"game_images/prey.xpm", &i, &j);
+			"game_images/prey.xpm", &x_pos, &y_pos);
 }
 
-void	adding_in_graphics(t_play *game)
+void	add_characters(t_play *game)
 {
 	int	h;
 	int	w;
