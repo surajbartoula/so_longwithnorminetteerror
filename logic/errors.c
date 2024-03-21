@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:57:17 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/17 23:00:52 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:19:30 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 static int	horizontalwall(t_play *game)
 {
-	int	i;
-	int	j;
+	int	width;
+	int	w;
 
-	i = game->width;
-	j = 0;
-	while (j < i)
+	width = game->width;
+	w = 0;
+	while (w < width)
 	{
-		if (game->map[0][i] == '1' && game->map[game->height - 1][j] == '1')
+		if (game->map[0][w] != '1'
+			|| game->map[game->height - 1][w] != '1')
 			return (0);
-		j++;
+		w++;
 	}
 	return (1);
 }
@@ -31,16 +32,16 @@ static int	horizontalwall(t_play *game)
 static int	verticalwall(t_play *game)
 {
 	int	height;
-	int	width;
+	int	h;
 
-	height = 0;
-	width = game->width;
-	while (height < game->height)
+	h = 0;
+	height = game->height;
+	while (h < height)
 	{
-		if (!(game->map[height][0] == '1'
-			&& game->map[height][width - 1] == '1'))
+		if (game->map[h][0] != '1'
+			|| game->map[h][game->width - 1] != '1')
 			return (0);
-		height++;
+		h++;
 	}
 	return (1);
 }

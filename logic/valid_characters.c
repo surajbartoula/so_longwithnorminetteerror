@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:27:09 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/17 23:01:37 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:56:43 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,18 @@ void	character_valid(t_play *game)
 	int	height;
 	int	width;
 
-	height = 0;
+	height = 1;
 	while (height < game->height - 1)
 	{
-		width = 0;
-		while (width <= game->width)
+		width = 1;
+		while (width < game->width - 1)
 		{
 			count_checker(game, height, width);
 			width++;
 		}
 		height++;
 	}
-	if (!(game->playercount == 1 && game->columncount > 1
-			&& game->exitcount == 1))
+	if (game->playercount != 1 || game->columncount < 1 || game->exitcount != 1)
 	{
 		ft_printf("\nError\nSomething is wrong!\n");
 		ft_printf("Either player, exit or collectables issue\n");

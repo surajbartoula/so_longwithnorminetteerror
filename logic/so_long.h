@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:25:22 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/20 21:14:41 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:59:31 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <errno.h>
 # include <string.h>
 # include <math.h>
-# include "get_next_line.h"
-# include "ft_printf.h"
+# include "../get_next_line/get_next_line.h"
+# include "../ft_printf/ft_printf.h"
 # include "../mlx/mlx.h"
 
 typedef struct t_type
