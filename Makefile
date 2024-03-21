@@ -6,7 +6,7 @@
 #    By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 17:13:32 by sbartoul          #+#    #+#              #
-#    Updated: 2024/03/21 18:32:12 by sbartoul         ###   ########.fr        #
+#    Updated: 2024/03/21 19:15:26 by sbartoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,6 @@ fclean: clean
 re: fclean all
 
 norm:
-	norminette libft init.c key_hook.c map.c move.c parse_input.c put_imgs.c so_long.c so_long.h win.c
+	norminette ft_printf get_next_line logic
 
 .PHONY: all clean fclean re norm
