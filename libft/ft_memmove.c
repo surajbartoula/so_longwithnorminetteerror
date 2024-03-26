@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 22:20:35 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/25 23:42:09 by sbartoul         ###   ########.fr       */
+/*   Created: 2023/12/20 11:42:14 by sbartoul          #+#    #+#             */
+/*   Updated: 2024/01/09 14:13:24 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
-# endif
+void	*ft_memmove(void *dest, const void *src, size_t len)
+{
+	unsigned char	*tdest;
+	unsigned char	*tsrc;
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <stdint.h>
-
-char	*get_next_line(int fd);
-
-size_t	ft_strlength(const char *str);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strdup(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-
-#endif
+	if (!src && !dest)
+		return (NULL);
+	tdest = (unsigned char *)dest;
+	tsrc = (unsigned char *)src;
+	if (dest <= src)
+	{
+		return (ft_memcpy(dest, src, len));
+	}
+	if (dest > src)
+	{
+		while (len > 0)
+		{
+			tdest[len - 1] = tsrc[len - 1];
+			len--;
+		}
+	}
+	return (dest);
+}

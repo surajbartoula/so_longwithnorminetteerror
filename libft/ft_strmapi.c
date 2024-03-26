@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 22:20:35 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/25 23:42:09 by sbartoul         ###   ########.fr       */
+/*   Created: 2023/12/25 17:02:16 by sbartoul          #+#    #+#             */
+/*   Updated: 2023/12/25 18:05:46 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
-# endif
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned int	len;
+	char			*str;
+	unsigned int	i;
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <stdint.h>
-
-char	*get_next_line(int fd);
-
-size_t	ft_strlength(const char *str);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strdup(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-
-#endif
+	i = 0;
+	if (!s || !f)
+		return (0);
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[len] = '\0';
+	return (str);
+}

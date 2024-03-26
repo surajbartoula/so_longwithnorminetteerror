@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:43:41 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/19 10:11:04 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:44:10 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,26 @@ static int	add_line(t_play *game, char *line)
 int	read_map_ber(t_play *game, char *argv[])
 {
 	char	*readmap;
+	int		count;
 
 	game->fd = open(argv[1], O_RDONLY);
 	if (game->fd < 0)
+	{
+		ft_printf("Error\nNot able to open the file.\n");
 		return (0);
+	}
+	count = 0;
 	while (1)
 	{
 		readmap = get_next_line(game->fd);
+		if (readmap == NULL && count == 0)
+		{
+			ft_printf("Error\nFile is empty.\n");
+			return (0);
+		}
 		if (!add_line(game, readmap))
 			break ;
+		count++;
 	}
 	close (game->fd);
 	game->width = width_of_map(game->map[0]);

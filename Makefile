@@ -6,7 +6,7 @@
 #    By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 17:13:32 by sbartoul          #+#    #+#              #
-#    Updated: 2024/03/21 19:15:26 by sbartoul         ###   ########.fr        #
+#    Updated: 2024/03/26 10:25:53 by sbartoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,10 @@ MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 FT_PRINTF_PATH = ft_printf/
 
 FT_PRINTF_LIB = $(FT_PRINTF_PATH)libftprintf.a
+
+LIBFT_PATH = libft/
+
+LIBFT_LIB = $(LIBFT_PATH)libft.a
 
 GETNEXTLINE := get_next_line/*.c
 
@@ -45,6 +49,7 @@ CFILES = \
 		logic/maps.c\
 		logic/so_long.c\
 		logic/valid_characters.c\
+		logic/has_ber_extension.c\
 
 OBJECTS = $(CFILES:.c=.o)
 
@@ -60,30 +65,31 @@ subsystems:
 	make -C $(MLX_PATH) all
 	@echo $(B)
 	make -C $(FT_PRINTF_PATH) all
+	@echo $(B)
+	make -C $(LIBFT_PATH) all
 
 $(NAME): $(OBJECTS)
 	@echo $(Y)Compiling [$(CFILES)]...$(X)
 	@echo $(G)Finished [$(CFILES)]$(X)
 	@echo
 	@echo $(Y)Compiling [$(NAME)]...$(X)
-	@$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJECTS) $(MLX_LIB) $(FT_PRINTF_LIB) $(GETNEXTLINE) -o $(NAME)
-	@echo $(G)Finished [$(NAME)]$(X)
+	@$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJECTS) $(MLX_LIB) $(FT_PRINTF_LIB) $(LIBFT_LIB) $(GETNEXTLINE) -o $(NAME)
+	@echo $(G)Ready to play 🎮 [$(NAME)]$(X)
 
 clean:
 	@make -C $(MLX_PATH) clean
 	@make -C $(FT_PRINTF_PATH) clean
+	@make -C $(LIBFT_PATH) clean
 	@rm -f $(OBJECTS)
 	@echo $(R)Removed [$(OBJECTS)]$(X)
 
 fclean: clean
 	@make -C $(MLX_PATH) clean
 	@make -C $(FT_PRINTF_PATH) clean
+	@make -C $(LIBFT_PATH) clean
 	@rm -f $(NAME)
 	@echo $(R)Removed [$(NAME)]$(X)
 
 re: fclean all
-
-norm:
-	norminette ft_printf get_next_line logic
 
 .PHONY: all clean fclean re norm

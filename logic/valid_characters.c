@@ -6,11 +6,18 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:27:09 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/21 16:56:43 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:48:50 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	ft_map_error(char *error_msg, t_play *game)
+{
+	ft_printf("Error\n");
+	ft_printf("%s\n", error_msg);
+	exit_window(game);
+}
 
 static void	count_checker(t_play *game, int height, int width)
 {
@@ -48,10 +55,10 @@ void	character_valid(t_play *game)
 		}
 		height++;
 	}
-	if (game->playercount != 1 || game->columncount < 1 || game->exitcount != 1)
-	{
-		ft_printf("\nError\nSomething is wrong!\n");
-		ft_printf("Either player, exit or collectables issue\n");
-		exit_window(game);
-	}
+	if (game->playercount != 1)
+		ft_map_error("Player should be only one.", game);
+	else if (game->exitcount != 1)
+		ft_map_error("Exit should be only one.", game);
+	else if (game->columncount < 1)
+		ft_map_error("Collectable should be alteast one.", game);
 }
