@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:27:09 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/25 22:48:50 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:08:56 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	count_checker(t_play *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		ft_printf("\nError Here!%c\n", game->map[height][width]);
+		ft_printf("Error Here\nWrong character %c\n", game->map[height][width]);
 		exit_window(game);
 	}
 	if (game->map[height][width] == 'C')

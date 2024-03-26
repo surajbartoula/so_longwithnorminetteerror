@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:47:57 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/26 10:02:36 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:11:46 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int	argumenterror(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		ft_printf("Error\n");
-		ft_printf("Please provide complete arguments.\n");
+		ft_printf("Error\nUsage: './so_long mappath/mapname.ber'\n");
 		return (0);
 	}
 	if (argv[1] == NULL)

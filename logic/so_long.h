@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:25:22 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/25 23:47:53 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:16:09 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct t_type
 }	t_play;
 
 int			exit_window(t_play *game);
+int			ft_maplen(char *str);
 int			character_steps(t_play *game, int i, int j);
 int			has_ber_extension(char *filename);
 int			key_hook(int keystroke, t_play *game);

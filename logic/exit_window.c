@@ -6,11 +6,21 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:30:14 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/20 21:12:28 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:15:43 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	ft_maplen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	return (i);
+}
 
 int	exit_window(t_play *game)
 {

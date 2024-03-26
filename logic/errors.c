@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:57:17 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/21 16:19:30 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:15:36 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,36 @@ static void	if_walls(t_play *game)
 	horizontalwalls = horizontalwall(game);
 	if (!verticalwalls || !horizontalwalls)
 	{
-		ft_printf("\nThis map is missing the walls\n");
+		ft_printf("Error\nThis map is missing the walls or there is gap.\n");
 		exit_window(game);
+	}
+}
+
+static void	if_rectangular(t_play *game)
+{
+	int	h;
+	int	w;
+	int	i;
+	int	wsize;
+
+	h = game->height;
+	w = game->width;
+	i = 1;
+	while (i < h)
+	{
+		wsize = (int)ft_maplen(game->map[i]);
+		if (wsize != w)
+		{
+			ft_printf("Error\nThe map provided is not rectangular.\n");
+			exit_window(game);
+		}
+		i++;
 	}
 }
 
 void	check_errors(t_play *game)
 {
 	if_walls(game);
+	if_rectangular(game);
 	character_valid(game);
 }
