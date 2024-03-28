@@ -6,7 +6,7 @@
 #    By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 17:13:32 by sbartoul          #+#    #+#              #
-#    Updated: 2024/03/26 10:25:53 by sbartoul         ###   ########.fr        #
+#    Updated: 2024/03/28 10:04:49 by sbartoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,9 @@ CFILES = \
 		logic/so_long.c\
 		logic/valid_characters.c\
 		logic/has_ber_extension.c\
+		logic/able_to_finish.c\
+		logic/able_to_collect.c\
+		logic/visited.c\
 
 OBJECTS = $(CFILES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:57:17 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/26 16:15:36 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:55:13 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,5 @@ void	check_errors(t_play *game)
 	if_walls(game);
 	if_rectangular(game);
 	character_valid(game);
+	able_to_finish_game(game);
 }

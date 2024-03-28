@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:25:22 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/26 16:16:09 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/03/28 09:41:00 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,14 @@ int			character_steps(t_play *game, int i, int j);
 int			has_ber_extension(char *filename);
 int			key_hook(int keystroke, t_play *game);
 int			read_map_ber(t_play *game, char *argv[]);
+int			collect_collectibles(t_play *game, int i, int j, char **visited);
+char		**visited_space(int height, int width);
+void		free_visited(char **visited, int height);
 void		check_errors(t_play *game);
 void		character_valid(t_play *game);
 void		add_characters(t_play *game);
 void		place_images_in_game(t_play *game);
+void		able_to_finish_game(t_play *game);
+void		ft_map_error(char *error_msg, t_play *game);
 
 #endif
