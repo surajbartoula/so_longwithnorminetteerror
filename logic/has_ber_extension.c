@@ -6,7 +6,7 @@
 /*   By: sbartoul <sbartoul@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:48:41 by sbartoul          #+#    #+#             */
-/*   Updated: 2024/03/25 23:54:53 by sbartoul         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:11:35 by sbartoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_double_ext(char *str)
 	int	i;
 	int	count;
 
-	i = 0;
+	i = 1;
 	count = 0;
 	while (str[i])
 	{
